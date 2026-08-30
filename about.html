@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - TEDx Air University Kamra</title>
+    <style>
+        /* Global Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Page Transition & Base Styles */
+        body {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Scroll Fade-In Elements */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CSS Variables */
+        :root {
+            --ted-red: #E62B1E;
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --text-main: #ffffff;
+            --text-muted: #a3a3a3;
+            --border-color: #2a2a2a;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            background-color: var(--bg-dark);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo span:first-child { color: var(--ted-red); font-size: 1.5rem; font-weight: 900;}
+        .logo span:last-child { font-size: 0.7rem; color: var(--text-main); font-weight: normal; margin-top: -3px;}
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a { transition: color 0.3s; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--ted-red); }
+        .nav-links a.active { color: var(--ted-red); }
+
+        .btn-attend {
+            background-color: var(--ted-red);
+            padding: 0.8rem 2rem;
+            border-radius: 2px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-attend:hover { background-color: #c92419; }
+
+        /* Sections Container */
+        .section { 
+            padding: 5rem 4rem; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        
+        .about-text {
+            max-width: 1000px;
+            font-size: 1.1rem;
+            color: #d4d4d4;
+            line-height: 1.7;
+        }
+
+        /* TEDx in Pakistan Grid */
+        .pk-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .pk-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            display: block; /* Turns anchor into block */
+            color: var(--text-main);
+            transition: border-color 0.3s, transform 0.3s, color 0.3s;
+        }
+        
+        .pk-card:hover {
+            border-color: var(--ted-red);
+            color: var(--ted-red);
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer { 
+            padding: 4rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .footer-links { 
+            display: flex; 
+            gap: 2rem; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+        }
+        .footer-links a:hover { color: var(--ted-red); }
+        .copyright { 
+            text-align: right; 
+            font-size: 0.8rem; 
+            color: var(--text-muted); 
+        }
+
+        /* =========================================
+           📱 MOBILE RESPONSIVENESS (PHONES & TABLETS)
+           ========================================= */
+        @media (max-width: 768px) {
+            /* 1. Fix Navigation */
+            nav { flex-direction: column; gap: 1rem; padding: 1.5rem 1rem; text-align: center; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
+
+            /* 3. Stack all the Grids to 1 Column */
+            .pk-grid { 
+                grid-template-columns: 1fr; 
+                gap: 1.5rem;
+            }
+
+            /* 4. Fix General Spacing & Text */
+            .section { padding: 4rem 1.5rem; }
+            .section-title { font-size: 2rem; }
+
+            /* 6. Fix Footer */
+            footer { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.5rem; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+            .copyright { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <span>TEDx</span>
+            <span>Air University Kamra</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html" class="active">ABOUT</a>
+            <a href="team.html">OUR TEAM</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+        <a href="index.html#register" class="btn-attend">ATTEND</a>
+    </nav>
+
+    <section class="section fade-up">
+        <h2 class="section-title">WHAT IS TED?</h2>
+        <div class="about-text">
+            <p>TED is an annual event where some of the world's leading thinkers and doers are invited to share what they are most passionate about. "TED" stands for Technology, Entertainment, Design — three broad subject areas that are, collectively, shaping our future. The diverse audience of CEOs, scientists, creatives and philanthropists is almost as extraordinary as the speakers, who have included Bill Clinton, Bill Gates, Jane Goodall, Frank Gehry, Paul Simon, Sir Richard Branson, Philippe Starck and Bono.</p>
+        </div>
+    </section>
+
+    <section class="section fade-up">
+        <h2 class="section-title">TEDX AIR UNIVERSITY KAMRA</h2>
+        <div class="about-text">
+            <p>First Spark of Innovation in Attock. A two-day independently organised TEDx event at the Air University Aerospace & Aviation Campus, Kamra, on 23 – 24 September 2026 — bringing talks, panels and a musical night to students across the region.</p>
+            <br>
+            <p>Our mission is to cultivate a community of curious minds driven to explore groundbreaking ideas and challenge the ordinary. We believe the local community holds immense untapped potential. Through this platform, we are dedicated to spotlighting homegrown innovators while actively connecting our youth with diverse global perspectives. By merging technology, social impact, and culture, we provide an environment where meaningful conversations naturally transform into actionable change.</p>
+        </div>
+    </section>
+
+    <section class="section fade-up" style="border-bottom: none;">
+        <h2 class="section-title">TEDX IN PAKISTAN</h2>
+        <div class="pk-grid">
+            <a href="https://www.instagram.com/tedxnust" target="_blank" class="pk-card">TEDXNUST</a>
+            <a href="https://www.instagram.com/tedxfastfaisalabad" target="_blank" class="pk-card">TEDXFAST</a>
+            <a href="https://www.instagram.com/tedxlums.pk/" target="_blank" class="pk-card">TEDXLUMS</a>
+            <a href="https://www.instagram.com/tedxiba_official" target="_blank" class="pk-card">TEDXIBA</a>
+            <a href="https://www.instagram.com/TEDxPunjabUniversity/" target="_blank" class="pk-card">TEDXPU</a>
+            <a href="https://www.instagram.com/tedxqau" target="_blank" class="pk-card">TEDXQAU</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">
+            <span>TEDx</span>
+            <span>Air University Kamra</span>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">HOME</a>
+            <a href="team.html">OUR TEAM</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="copyright">
+            This independent TEDx event is operated under license from TED.<br>
+            © 2026 TEDx Air University Kamra
+        </div>
+    </footer>
+
+    <script>
+        // Page Transition: Fade in on load (Fixed for local previewers)
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Failsafe: Force it to show after 100 milliseconds just in case
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+        }, 100);
+
+        // Page Transition: Fade out on internal links
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Check if it's an internal link, not opening in a new tab, and not an anchor (#) link
+                if (this.hostname === window.location.hostname && this.target !== '_blank' && !this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.body.classList.remove('loaded');
+                    setTimeout(() => {
+                        window.location = this.href;
+                    }, 500); // Matches the 0.5s CSS transition
+                }
+            });
+        });
+
+        // Scroll Trigger Animation Observer
+        const observerOptions = {
+            threshold: 0.1, // Triggers when 10% of the element is visible
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
