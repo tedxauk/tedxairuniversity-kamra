@@ -334,6 +334,158 @@
             .footer-links { flex-wrap: wrap; justify-content: center; }
             .copyright { text-align: center; }
         }
+
+/* ==========================================================================
+   OP Middle-Aligned Contact Section Styling
+   ========================================================================== */
+
+.contact-center-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.contact-op-card {
+    background: linear-gradient(145deg, #120808 0%, #0a0a0a 100%);
+    border: 1px solid var(--ted-red);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 0 30px rgba(230, 43, 30, 0.2);
+    text-align: center;
+}
+
+.contact-header .contact-icon {
+    font-size: 3rem;
+    color: var(--ted-red);
+    margin-bottom: 0.8rem;
+}
+
+.contact-header h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.5px;
+}
+
+.contact-header p {
+    color: #bbb;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Team Contacts Two-Column Grid inside the Card */
+.team-contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.person-info-box {
+    background: #141414;
+    border: 1px solid #282828;
+    border-top: 3px solid var(--ted-red);
+    padding: 1.5rem 1.2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.person-info-box:hover {
+    transform: translateY(-4px);
+    border-color: var(--ted-red);
+}
+
+.role-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--ted-red);
+    letter-spacing: 1.2px;
+    display: block;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.person-name {
+    font-size: 1.25rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.btn-person-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--ted-red);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    width: 100%;
+    transition: all 0.25 ease;
+}
+
+.btn-person-whatsapp:hover {
+    background: #ff2b1d;
+    box-shadow: 0 4px 15px rgba(230, 43, 30, 0.4);
+}
+/* Contact Section CTA Box Styling */
+.contact-cta-card {
+    background: linear-gradient(135deg, #100606 0%, #0a0a0a 100%);
+    border: 1px solid var(--ted-red);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    margin: 2.5rem auto 0;
+    max-width: 850px;
+    box-shadow: 0 0 25px rgba(230, 43, 30, 0.25);
+}
+
+.contact-cta-card h3 {
+    font-size: 1.9rem;
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 0.6rem;
+    letter-spacing: 1px;
+}
+
+.contact-cta-card p {
+    color: #cccccc;
+    font-size: 0.98rem;
+    max-width: 600px;
+    margin: 0 auto 1.8rem;
+    line-height: 1.5;
+}
+
+/* Red Pulsing / Glowing Register Button */
+.btn-cta-red {
+    display: inline-block;
+    background: var(--ted-red);
+    color: #ffffff !important;
+    font-size: 1.05rem;
+    font-weight: 800;
+    padding: 14px 38px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 18px rgba(230, 43, 30, 0.6);
+    transition: all 0.3s ease;
+}
+
+.btn-cta-red:hover {
+    background: #ff2b1d;
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(230, 43, 30, 0.85);
+}
     </style>
 </head>
 <body>
@@ -398,34 +550,49 @@
         </div>
     </section>
 
-    <section class="section fade-up" id="register">
-        <h4 class="pre-title">ATTEND</h4>
-        <h2 class="section-title-medium">HOW TO REGISTER</h2>
-        
-        <div class="reg-container">
-            <div class="reg-card">
-                <h4>TICKET PRICE</h4>
-                <div class="price">PKR 3,000</div>
-                <p class="price-desc">Expected price — final ticket price will be confirmed later.</p>
-                
-                <h4>SEND PAYMENT TO</h4>
-                <div class="payment-info">
-                    <strong>M.Mukaram</strong>
-                    <strong>03116361769</strong>
-                    <span>EasyPaisa · JS Bank Zindigi</span>
-                </div>
-                
-                <a href="https://wa.me/923116361769" target="_blank" class="btn-whatsapp">SEND SCREENSHOT ON WHATSAPP</a>
+   <section class="section fade-up" id="contact" style="text-align: center;">
+    <h4 style="color: var(--ted-red); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.5rem; text-transform: uppercase;">GET IN TOUCH</h4>
+    <h2 class="section-title-medium" style="color: #fff; font-size: 2.2rem; margin-bottom: 2rem; font-weight: 900;">CONTACT & SUPPORT</h2>
+
+    <div class="contact-center-wrapper">
+        <!-- Main Contact Card -->
+        <div class="contact-op-card">
+            <div class="contact-header">
+                <i class="fab fa-whatsapp contact-icon"></i>
+                <h3>HAVE QUESTIONS OR NEED HELP?</h3>
+                <p>For any queries regarding tickets, registration status, venue details, or event information, reach out to our core team directly.</p>
             </div>
-            
-            <ul class="reg-steps">
-                <li>Send the ticket amount to M.Mukaram on 03116361769 via EasyPaisa or JS Bank Zindigi.</li>
-                <li>Take a screenshot of the payment confirmation.</li>
-                <li>Send the screenshot to M.Mukaram on WhatsApp: 03116361769.</li>
-                <li>Our team will reply with your registration confirmation and seat details.</li>
-            </ul>
+
+            <!-- Team Contacts Grid -->
+            <div class="team-contacts-grid">
+                <!-- Person 1: Mukaram -->
+                <div class="person-info-box">
+                    <span class="role-tag">REGISTRATION & INQUIRIES LEAD</span>
+                    <h4 class="person-name">Muhammad Mukaram</h4>
+                    <a href="https://wa.me/923116361769" target="_blank" class="btn-person-whatsapp">
+                        <i class="fab fa-whatsapp"></i> 03116361769
+                    </a>
+                </div>
+
+                <!-- Person 2: Saif Ur Rehman -->
+                <div class="person-info-box">
+                    <span class="role-tag">DEPUTY DIRECTOR</span>
+                    <h4 class="person-name">Saif Ur Rehman</h4>
+                    <a href="https://wa.me/923490542883" target="_blank" class="btn-person-whatsapp">
+                        <i class="fab fa-whatsapp"></i> 03490542883
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <!-- Red Bordered Registration CTA Card -->
+<div class="contact-cta-card">
+    <h3>No More Questions?</h3>
+    <p>Complete your registration by filling out the official form and transfer your payment as soon as possible to confirm your seats as they are limited to 100 ONLY!</p>
+    <a href="index.html#register" class="btn-cta-red">READY TO REGISTER</a>
+</div>
+    </div>
+</section>
 
     <footer>
         <div class="logo">
